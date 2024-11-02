@@ -92,17 +92,26 @@
         {}
     }
     {
-        % master
-        \ifthenelse{\equal{\Type}{thesis}}
+        \ifthenelse{\equal{\Period}{proposal}}
         {
+            % proposal
             % thesis
-            \newcommand{\TitleTypeName}{浙江大学硕士学位论文}
-            \newcommand{\TitleTypeNameCover}{硕士学位论文}
+            \newcommand{\TitleTypeName}{浙江大学硕士学位论文开题报告}
+            \newcommand{\TitleTypeNameCover}{硕士学位论文开题报告}
         }
         {
-            % design
-            \newcommand{\TitleTypeName}{浙江大学硕士专业学位论文}
-            \newcommand{\TitleTypeNameCover}{硕士专业学位论文}
+            % master
+            \ifthenelse{\equal{\Type}{thesis}}
+            {
+                % thesis
+                \newcommand{\TitleTypeName}{浙江大学硕士学位论文}
+                \newcommand{\TitleTypeNameCover}{硕士学位论文}
+            }
+            {
+                % design
+                \newcommand{\TitleTypeName}{浙江大学硕士专业学位论文}
+                \newcommand{\TitleTypeNameCover}{硕士专业学位论文}
+            }
         }
     }
 }

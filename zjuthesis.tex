@@ -25,32 +25,34 @@
     Grade           = 2023,            % only the year, no '级'
     Major           = 控制科学与工程,
     Department      = 控制科学与工程学院,
-    SubmitDate      = 2024.11.04,
+    SubmitDate      = 2025.12.04,
     MajorFormat     = general,
     Degree          = graduate,   % 'undergraduate' or 'graduate'
     Type            = thesis,          % 'thesis'   or 'design'
-    Period          = proposal,           % 'proposal' or 'paper' or 'final'
+    Period          = paper,           % 'proposal' or 'paper' or 'final'
     BlindReview     = false,           % 'false'    or 'true'
     Language        = chinese,         % 'chinese'  or 'english'
     % Graduate Thesis Info
     GradLevel       = master,          % 'master' or 'doctor'
-    Topic           = 基于强化学习的足式机械臂全身控制器,
-    % ColaboratorName = 合作导师,
+    Topic           = 强化学习控制方法,
+    ColaboratorName = 合作导师,
     % Table of Contents
     ListOfContents  = true,
     ListOfFigures   = true,
     ListOfTables    = true,
     ListOfAlgorithms= false,
-    Title           = 物理启发式全身操纵与运动技能的强化学习方法,
-    TitleEng        = {{Graduation Thesis Title}}
+    Title           = 基于强化学习的足式机械臂的全身控制方法,
+    TitleEng        = {{Reinforcement Learning Based Whole-Body Control for Legged Manipulator}}
 ]{zjuthesis}
-
 %% Uncomment the following lines if you need multi line titles on cover pages
-\titletwolines{物理启发式全身操纵与}{运动技能的强化学习方法}
+% \titletwolines{基于物理启发式强化}{学习的全身控制方法}
+\titletwolines{基于强化学习的足式}{机械臂的全身控制方法}
 % \titleengtwolines{English Title Line One}{English Title Line Two}
 
 % \titlethreelines{毕业论文题目第一行}{毕业论文题目第二行}{毕业论文题目第三行}
-% \titleengthreelines{English Title Line One}{English Title Line Two}{English Title Line Three}
+% \titleengthreelines{Physics Informed}{Reinforcement Learning for}{Whole-Body Control}
+\titleengthreelines{Reinforcement Learning}{Based Whole-Body Control}{for Legged Manipulator}
+
 
 %% Uncomment the following lines if you need multi line major names on cover pages
 % \majortwolines{专业名第一行}{专业名第二行}
@@ -66,103 +68,110 @@
         % Final part
         \newcommand{\undergradcurrstage}{final}
         \newrefsection
-
         \coverstyle
         \inputpage{final}{cover}
-
         \prevstyle
         \inputpage{final}{previous}
         \inputpage{final}{toc}
-
         \bodystyle
         \inputpage{final}{cover-part}
-
         \resetpagecounter{}
         \inputbody{final/content}
         \inputbody{final/post}
-
         \poststyle
         \inputpage{final}{post}
-
         % Proposal part
         \renewcommand{\undergradcurrstage}{proposal}
         \newrefsection
-
         \coverstyle
         \inputpage{proposal}{cover-part}
         \inputpage{proposal}{cover}
         \inputpage{proposal}{previous}
-
         \bodystyle
         \inputbody{proposal/content}
-
         \poststyle
         \inputpage{proposal}{post}
-    }
-
+    }{}
     \ifthenelse{\equal{\Period}{proposal}}
     {
         % Thesis proposal
         \newcommand{\undergradcurrstage}{proposal}
-
         \coverstyle
         \inputpage{proposal}{cover}
-
         % 'proposal' previous part uses 'empty' page style,
         % as shown in cs undergrad template.
-\inputpage{proposal}{previous}
-
+        \inputpage{proposal}{previous}
         \prevstyle
         \inputpage{proposal}{toc}
-
         \bodystyle
         \inputbody{proposal/content}
-
         \poststyle
         \inputpage{proposal}{post}
-    }
-
+    }{}
     \ifthenelse{\equal{\Period}{paper}}
     {
         % paper only part
         \newcommand{\undergradcurrstage}{paper}
         \newrefsection
-
         \coverstyle
         \inputpage{final}{cover}
-
         \prevstyle
         \inputpage{final}{previous}
         \inputpage{final}{toc}
-
         \bodystyle
         \inputpage{final}{cover-part}
         \cleardoublepage
-
         \inputbody{final/content}
         \inputbody{final/post}
-
         \poststyle
         \inputpage{final}{post}
-    }
+    }{}
 }
 
 \newcommand{\inputgraduate}
 {
-    \coverstyle
-    \inputpage{cover}
-
-    \prevstyle
-    \inputpage{previous}
-    \inputpage{toc}
-
-    % Main contents
-    \bodystyle
-    \inputbody{content}
-
-    % Post part
-    \poststyle
-    \inputbody{post}
+    \ifthenelse{\equal{\Period}{proposal}}
+    {
+        \coverstyle
+        \inputpage{proposal_cover1}
+        % \prevstyle
+        % \inputpage{previous}
+        % \inputpage{toc}
+        % Main contents
+        \bodystyle
+        \inputbody{proposal_content}
+        % Post part
+        % \poststyle
+        % \inputbody{post}
+        }{}
+        \ifthenelse{\equal{\Period}{paper}}
+        {
+        \coverstyle
+        \inputpage{cover}
+        \prevstyle
+        \inputpage{previous}
+        \inputpage{toc}
+        % Main contents
+        \bodystyle
+        \inputbody{content}
+        % Post part
+        \poststyle
+        \inputbody{post}
+    }{}
+    \ifthenelse{\equal{\Period}{final}}
+    {
+        \coverstyle
+        \inputpage{cover}
+        \prevstyle
+        \inputpage{previous}
+        \inputpage{toc}
+        % Main contents
+        \bodystyle
+        \inputbody{content}
+        % Post part
+        \poststyle
+        \inputbody{post}
+    }{}
 }
 
 \begin{document}
