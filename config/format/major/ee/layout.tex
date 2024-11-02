@@ -1,0 +1,22 @@
+\ifthenelse{\equal{\Degree}{undergraduate}}
+{
+    \ifthenelse{\equal{\Period}{proposal}}
+    {
+        \renewcommand{\cftchapfont}         {\bfseries\zihao{-4}}
+        \renewcommand{\cftsecfont}          {\bfseries\zihao{-4}}
+        \renewcommand{\cftsubsecfont}       {\zihao{-4}}
+        \renewcommand{\cftsubsubsecfont}    {\zihao{-4}}
+    }
+    {
+      \setlength{\cftsecindent}       {0em}
+      \setlength{\cftsubsecindent}    {2em}
+      \setlength{\cftsubsubsecindent} {4em}
+    }
+
+    \appto{\bodystyle}{
+        \defbibheading{bibliography}[\bibname]{
+            \sectionnonum{#1}
+            \markboth{#1}{#1}
+        }
+    }
+}{}
