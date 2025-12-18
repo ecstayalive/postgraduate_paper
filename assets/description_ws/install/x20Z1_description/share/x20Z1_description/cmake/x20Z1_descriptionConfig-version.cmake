@@ -1,0 +1,1 @@
+/home/ecstayalive/Workspaces/zjuthesis/assets/description_ws/build/x20Z1_description/ament_cmake_core/x20Z1_descriptionConfig-version.cmake

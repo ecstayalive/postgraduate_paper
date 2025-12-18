@@ -1,0 +1,9 @@
+/home/ecstayalive/Workspaces/zjuthesis/assets/description_ws/build/x20Z1_description/CMakeFiles/uninstall.dir
+/home/ecstayalive/Workspaces/zjuthesis/assets/description_ws/build/x20Z1_description/CMakeFiles/x20Z1_description_uninstall.dir
+/home/ecstayalive/Workspaces/zjuthesis/assets/description_ws/build/x20Z1_description/CMakeFiles/test.dir
+/home/ecstayalive/Workspaces/zjuthesis/assets/description_ws/build/x20Z1_description/CMakeFiles/edit_cache.dir
+/home/ecstayalive/Workspaces/zjuthesis/assets/description_ws/build/x20Z1_description/CMakeFiles/rebuild_cache.dir
+/home/ecstayalive/Workspaces/zjuthesis/assets/description_ws/build/x20Z1_description/CMakeFiles/list_install_components.dir
+/home/ecstayalive/Workspaces/zjuthesis/assets/description_ws/build/x20Z1_description/CMakeFiles/install.dir
+/home/ecstayalive/Workspaces/zjuthesis/assets/description_ws/build/x20Z1_description/CMakeFiles/install/local.dir
+/home/ecstayalive/Workspaces/zjuthesis/assets/description_ws/build/x20Z1_description/CMakeFiles/install/strip.dir

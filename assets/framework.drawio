@@ -1,0 +1,115 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="Page-1" id="HnCqSTjH-4sD63vW4OeQ">
+    <mxGraphModel dx="1426" dy="880" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;strokeWidth=2;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="720" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;问题背景与核心挑战 （第一二章）&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#990000;" vertex="1" parent="1">
+          <mxGeometry x="304" y="46" width="232" height="29" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="高维冗余系统的&lt;br&gt;动力学耦合" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#B85450;fontStyle=1;fontColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="80" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Sim2Real 迁移的&lt;br&gt;异构动力学鸿沟" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#B85450;fontStyle=1;fontColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="80" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="移动与操作协同中的&lt;br&gt;局部最优陷阱" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#B85450;fontStyle=1;fontColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="80" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=2;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="147" width="350" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;第三章：控制框架与 Sim2Real&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#003366;" vertex="1" parent="1">
+          <mxGeometry x="110" y="152" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="非对称 Actor-Critic 架构 (POMDP)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6C8EBF;fontStyle=1;align=center;verticalAlign=top;spacingTop=5;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="85" y="192" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="&lt;b&gt;Actor&lt;/b&gt;: LSTM 隐式推断&lt;br&gt;&lt;font color=&quot;#666666&quot; style=&quot;font-size: 10px;&quot;&gt;(处理观测噪声/延迟)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="95" y="222" width="135" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="&lt;b&gt;Critic&lt;/b&gt;: 特权信息融合&lt;br&gt;&lt;font color=&quot;#666666&quot; style=&quot;font-size: 10px;&quot;&gt;(物理参数/地形真值)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="240" y="222" width="135" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="Sim-to-Real 迁移策略" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontStyle=1;verticalAlign=top;spacingTop=5;arcSize=10;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="85" y="287" width="300" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="双队列延迟注入机制&lt;br&gt;&lt;font color=&quot;#666666&quot; style=&quot;font-size: 10px;&quot;&gt;(模拟真实通讯/计算滞后)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9673A6;" vertex="1" parent="1">
+          <mxGeometry x="100" y="322" width="270" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="机械臂高刚度宽限幅建模&lt;br&gt;&lt;font color=&quot;#666666&quot; style=&quot;font-size: 10px;&quot;&gt;(解决高增益下的梯度饱和)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9673A6;" vertex="1" parent="1">
+          <mxGeometry x="100" y="372" width="270" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="监督学习神经网络速度估计&lt;br&gt;&lt;font color=&quot;#666666&quot; style=&quot;font-size: 10px;&quot;&gt;(基于本体感知的状态重构)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9673A6;" vertex="1" parent="1">
+          <mxGeometry x="100" y="422" width="270" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=2;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="430" y="147" width="350" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;第四章：PFG 奖励重塑与优化&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#663300;" vertex="1" parent="1">
+          <mxGeometry x="480" y="152" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="物理可行域与几何先验" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6B656;fontStyle=1;align=center;verticalAlign=top;spacingTop=5;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="455" y="192" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="&lt;b&gt;数值逆运动学&lt;/b&gt;&lt;br&gt;阻尼最小二乘法&lt;br&gt;&lt;font color=&quot;#666666&quot; style=&quot;font-size: 10px;&quot;&gt;(处理奇异性/热启动)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="465" y="222" width="135" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="&lt;b&gt;可行性判定&lt;/b&gt;&lt;br&gt;物体雅可比矩阵&lt;br&gt;&lt;font color=&quot;#666666&quot; style=&quot;font-size: 10px;&quot;&gt;(李代数误差度量)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="610" y="222" width="135" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="复合奖励函数重塑策略" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontStyle=1;align=center;verticalAlign=top;spacingTop=5;arcSize=10;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="455" y="287" width="300" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="PFG 引导奖励&lt;br&gt;&lt;font color=&quot;#666666&quot; style=&quot;font-size: 10px;&quot;&gt;(可行性门控与最小激励机制)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;" vertex="1" parent="1">
+          <mxGeometry x="470" y="322" width="270" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="Keypoint 隐式位姿度量&lt;br&gt;&lt;font color=&quot;#666666&quot; style=&quot;font-size: 10px;&quot;&gt;(消除权重分配/提升收敛稳定性)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;" vertex="1" parent="1">
+          <mxGeometry x="470" y="372" width="270" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="异构正则化惩罚&lt;br&gt;&lt;font color=&quot;#666666&quot; style=&quot;font-size: 10px;&quot;&gt;(力矩宽限幅 / 速度 / 平滑 / 碰撞)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;" vertex="1" parent="1">
+          <mxGeometry x="470" y="422" width="270" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="38" value="引导优化" style="endArrow=classic;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;dashed=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;" parent="1" source="24" target="16">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="430" y="410" as="sourcePoint" />
+            <mxPoint x="480" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="29" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=2;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="517" width="720" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;第五章：实物部署与实验验证 (X20-Z1 复合机器人平台)&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#336600;" vertex="1" parent="1">
+          <mxGeometry x="220" y="522" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="基础能力验证" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82B366;fontStyle=1;verticalAlign=top;spacingTop=5;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="85" y="557" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="• 移动操作稳定性&lt;br&gt;• 全身运动学协同" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="95" y="582" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="高动态鲁棒性验证" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82B366;fontStyle=1;verticalAlign=top;spacingTop=5;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="557" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="• 模仿体操运动&lt;br&gt;• 内源性扰动抑制" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="330" y="582" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="安全泛化验证" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82B366;fontStyle=1;verticalAlign=top;spacingTop=5;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="555" y="557" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="• 机械臂突发失能&lt;br&gt;• 零样本容错控制" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="565" y="582" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="41" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;strokeWidth=2;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="652" width="719" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="42" value="&lt;b&gt;第六章：总结与展望&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="340" y="652" width="160" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
