@@ -959,31 +959,50 @@ PPO 通过引入新旧策略的概率比率 $r_t(\theta)$ 来量化更新幅度�
 尽管引入深度相机或激光雷达等外部地形感知手段在理论上能够显著提升机器人的越障能力，但在实际工程应用中，传感器的测量数据往往受到复杂光照、材质反射率及外参标定误差的严重影响。对于足式移动操作平台这一特殊系统而言，机械臂的存在显著提高了系统重心并引入了额外的转动惯量，导致策略对感知噪声的敏感度成为关乎系统安全性的核心问题。本节旨在通过仿真实验，探究感知噪声与系统动力学稳定性之间的深层耦合关系，并以此作为实物部署策略选择的科学依据。
 
 为了处理高维的地形感知信息，本研究采用了 Lee 等人提出的 Belief Encoder 架构 \cite{lee2020learning}，利用卷积神经网络（CNN）\cite{lecun1989backpropagation} 对包含噪声与延迟的历史地形高度图进行特征提取与编码。在策略评估阶段，为了模拟真实传感器在不同工况下的性能衰减，我们在获取仿真物理引擎提供的完美地形高程图真值的基础上，人为注入不同强度的零均值高斯噪声 $\sigma_{map}$ 作为 Actor 网络的输入。实验以机器人在不同噪声水平下的非预期碰撞点总数（即除足端外，膝关节、机械臂或机身与环境的接触次数）作为核心评价指标，该指标直接反映了机器人跌倒或发生严重磕碰的风险等级。每个参数下做$20$次相关实验，然后计算其均值与方差。
-\begin{figure}[htbp]
+\begin{figure}[hbp]
     \centering
     \includegraphics[width=0.9\textwidth]{content/terrain_collision_analysis.pdf}
     \caption{地形感知噪声对非足部碰撞数量的影响分析}
     \label{Fig.terrain_sensitivity}
 \end{figure}
 
-实验结果如图 \ref{Fig.terrain_sensitivity} 所示。首先，当感知噪声较小（$\sigma < 4\,\text{cm}$）时，虽然碰撞点数量相对受控，但依然存在一定量的非预期接触。这表明，即便采用了 Belief Encoder 对时序信息进行融合，训练过程中的感知噪声仍阻碍了策略网络提取出完全精确的地形几何特征，导致落足点存在固有误差。
-其次，随着噪声强度的进一步升高，碰撞点数量呈现急剧上升趋势，高噪声下的碰撞频率达到了低噪声工况的两倍以上。通过深入分析失败案例的轨迹数据，我们发现足式移动操作平台具有惯性耦合效应：感知的微小偏差首先导致策略对落足高度产生误判，引发轻微的踏空或绊脚；随即，这种足端的运动学误差导致基座产生倾斜，此时高耸的机械臂引入力臂效应，基座的微小倾斜被放大为较大的干扰力矩，最终导致机器人发生不可逆的动力学失稳与摔倒。
-
-上述分析深刻揭示了在当前感知硬件精度受限且机械臂惯性影响显著的前提下，直接依赖含噪地形图进行端到端控制存在较高的安全隐患。基于此实验结论，为了确保实物实验的安全与鲁棒性，本研究在第五章的实物部署中最终采用了仅仅依靠本体感知的控制策略。\autoref{Fig.sim_terrain}展示在训练阶段，使用无噪声理想地形高程信息进行训练，策略网络能够展现出在复杂地形上较为稳定的移动与协同操作能力。这证实了本文提出的控制框架在理想感知条件下具备处理非结构化地形的理论能力。
+实验结果如图 \ref{Fig.terrain_sensitivity} 所示。首先，当感知噪声较小（$\sigma < 4\,\text{cm}$）时，虽然碰撞点数量相对受控，但依然存在一定量的非预期接触。这表明，即便采用了 Belief Encoder 对时序信息进行融合，训练过程中的感知噪声阻碍了策略网络提取出完全精确的地形几何特征，导致落足点存在固有误差。
+其次，随着噪声强度的进一步升高，碰撞点数量呈现急剧上升趋势，高噪声下的碰撞频率达到了低噪声工况的两倍以上。这与当前理论相符，当感知被噪声影响而失效，机器人只能通过历史观测来推断当前状态，通过碰撞隐式推断地形特征变量，从而导致非预期碰撞点数量呈现上升趋势。尽管如此，基于上述方法得到的全身控制系统依然能够处理这些非预期碰撞，防止机器人在运动中摔倒。
 \begin{figure}[htbp]
     \centering
     \begin{minipage}{\textwidth}
         \centering
         \subfloat[]{
-            \includegraphics[width=0.46\textwidth]{content/loco_mani_1.png}
+            \includegraphics[width=0.46\textwidth]{content/legged_manipulator1.jpg}
         }
         \subfloat[]{
-            \includegraphics[width=0.46\textwidth]{content/loco_mani_2.png}
+            \includegraphics[width=0.46\textwidth]{content/legged_manipulator3.jpg}
         }
     \end{minipage}
-    \caption{理想感知条件下足式移动操作平台在复杂仿真地形上的运动展示}
+    \begin{minipage}{\textwidth}
+        \centering
+        \subfloat[]{
+            \includegraphics[width=0.46\textwidth]{content/legged_manipulator4.jpg}
+        }
+        \subfloat[]{
+            \includegraphics[width=0.46\textwidth]{content/legged_manipulator5.jpg}
+        }
+    \end{minipage}
+    \begin{minipage}{\textwidth}
+        \centering
+        \subfloat[]{
+            \includegraphics[width=0.46\textwidth]{content/legged_manipulator6.jpg}
+        }
+        \subfloat[]{
+            \includegraphics[width=0.46\textwidth]{content/legged_manipulator7.jpg}
+        }
+    \end{minipage}
+    \caption{足式移动操作平台在各种地形上的全身运动展示}
     \label{Fig.sim_terrain}
 \end{figure}
+
+\autoref{Fig.sim_terrain}展示一些简单的实验。基于上述框架，我们的机器人能够在穿越各种非结构化与结构化场景，利用机械臂实现各种操作任务。在这些场景中移动时，尽管非预期碰撞点数量较多，但是通过域随机化方法，我们的控制器能够处理这些非预期接触，并保证四足机器人与机械臂的控制稳定性。这些实验强有力的证明了我们的控制框架与方法的有效性，极大的扩展了足式移动操作平台的应用范围。
+
 
 
 \section{本章小结}
